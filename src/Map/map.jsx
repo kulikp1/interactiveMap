@@ -4,7 +4,13 @@ import style from "./map.module.css";
 
 const UkraineMap = () => {
   const handleRegionClick = (event) => {
-    console.log("Натиснута область:", event.target.id);
+    const region = event.target.id;
+    if (region === "path6028") {
+      console.log("Натиснута область: Київська");
+    }
+    if (region === "path5946") {
+      console.log("Натиснута область: Сумська");
+    }
   };
 
   return (
