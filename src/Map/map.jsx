@@ -5,7 +5,7 @@ import style from "./map.module.css";
 const UkraineMap = () => {
   const handleRegionClick = (event) => {
     const region = event.target.id;
-    if (region === "path6028") {
+    if (region === "path6026") {
       console.log("Натиснута область: Київська");
     }
     if (region === "path5946") {
@@ -13,6 +13,9 @@ const UkraineMap = () => {
     }
     if (region === "path5958") {
       console.log("Натиснута область: Харківська");
+    }
+    if (region === "path6028") {
+      console.log("Натиснута область: Чернігівська");
     }
   };
 
