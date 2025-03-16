@@ -26,6 +26,9 @@ const UkraineMap = () => {
     if (region === "path7") {
       console.log("Натиснута область: Кримська");
     }
+    if (region === "path5994") {
+      console.log("Натиснута область: Одеська");
+    }
   };
 
   return (
