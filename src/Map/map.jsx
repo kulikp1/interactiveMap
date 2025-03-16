@@ -11,6 +11,9 @@ const UkraineMap = () => {
     if (region === "path5946") {
       console.log("Натиснута область: Сумська");
     }
+    if (region === "path5958") {
+      console.log("Натиснута область: Харківська");
+    }
   };
 
   return (
