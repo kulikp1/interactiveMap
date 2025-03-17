@@ -35,6 +35,9 @@ const UkraineMap = () => {
     if (region === "path3616") {
       console.log("Натиснута область: Полтавська");
     }
+    if (region === "path5970") {
+      console.log("Натиснута область: Дніпропетровська");
+    }
   };
 
   return (
