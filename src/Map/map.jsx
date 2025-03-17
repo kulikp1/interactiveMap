@@ -44,10 +44,10 @@ const UkraineMap = () => {
     if (region === "path3316") {
       console.log("Натиснута область: Херсонська");
     }
-    if (region === "path3316") {
+    if (region === "path6016") {
       console.log("Натиснута область: Миколаївська");
     }
-    if (region === "path3403") {
+    if (region === "path3404") {
       console.log("Натиснута область: Кіровоградська");
     }
   };
