@@ -13,7 +13,9 @@ const regionNames = {
   path5876: "Запорізька",
   path3316: "Херсонська",
   path6016: "Миколаївська",
-  path3404: "Кіровоградська"
+  path3404: "Кіровоградська",
+  path6020: "Луцька"
+  // add
 };
 
 const handleRegionClick = (event) => {
