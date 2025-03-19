@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import UkraineSVG from "../assets/Kharkiv_Oblast_UPA.svg?raw";
 import style from "./map.module.css";
 import handleRegionClick from "../utils/regionClick";
+import RegionModal from "../Modal/RegionModal";
 
 const UkraineMap = () => {
+  const [selectedRegion, setSelectedRegion] = useState(null);
+
+  const onRegionClick = (event) => {
+    handleRegionClick(event, setSelectedRegion); // Передаємо setSelectedRegion
+  };
+
   return (
-    <div
-      className={style.mapContainer}
-      dangerouslySetInnerHTML={{ __html: UkraineSVG }}
-      onClick={handleRegionClick}
-    />
+    <div>
+      <div
+        className={style.mapContainer}
+        dangerouslySetInnerHTML={{ __html: UkraineSVG }}
+        onClick={onRegionClick} // Використовуємо обгорткову функцію
+      />
+      <RegionModal
+        region={selectedRegion}
+        onClose={() => setSelectedRegion(null)}
+      />
+    </div>
   );
 };
 
