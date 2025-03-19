@@ -26,10 +26,11 @@ const regionNames = {
   path5934: "Вінницька"
 };
 
-const handleRegionClick = (event) => {
+const handleRegionClick = (event, setSelectedRegion) => {
   const region = event.target.id;
   if (regionNames[region]) {
     console.log(`Натиснута область: ${regionNames[region]}`);
+    setSelectedRegion(regionNames[region]);
   }
 };
 
