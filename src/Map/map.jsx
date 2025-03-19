@@ -8,7 +8,7 @@ const UkraineMap = () => {
   const [selectedRegion, setSelectedRegion] = useState(null);
 
   const onRegionClick = (event) => {
-    handleRegionClick(event, setSelectedRegion); // Передаємо setSelectedRegion
+    handleRegionClick(event, setSelectedRegion);
   };
 
   return (
@@ -16,7 +16,7 @@ const UkraineMap = () => {
       <div
         className={style.mapContainer}
         dangerouslySetInnerHTML={{ __html: UkraineSVG }}
-        onClick={onRegionClick} // Використовуємо обгорткову функцію
+        onClick={onRegionClick}
       />
       <RegionModal
         region={selectedRegion}
