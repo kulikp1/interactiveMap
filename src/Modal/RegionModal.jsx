@@ -13,7 +13,7 @@ const RegionModal = ({ region, onClose }) => {
       className={style.modal}
       overlayClassName={style.overlay}
     >
-      <h2>{region ? `Область: ${region}` : ""}</h2>
+      <h2 className={style.region}>{region ? `Область: ${region}` : ""}</h2>
       <button onClick={onClose} className={style.closeButton}>
         Закрити
       </button>
