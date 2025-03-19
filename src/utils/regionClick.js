@@ -24,7 +24,6 @@ const regionNames = {
   path5908: "Житомирська",
   path3354: "Черкасська",
   path5934: "Вінницька"
-  // add
 };
 
 const handleRegionClick = (event) => {
