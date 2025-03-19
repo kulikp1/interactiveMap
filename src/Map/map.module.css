@@ -9,3 +9,7 @@ svg {
   width: 80%;
   height: auto;
 }
+
+.mapContainer path {
+  cursor: pointer;
+}
