@@ -13,3 +13,7 @@ svg {
 .mapContainer path {
   cursor: pointer;
 }
+.selected {
+  fill: blue !important; /* Або інший колір виділення */
+  transition: fill 0.3s ease;
+}
