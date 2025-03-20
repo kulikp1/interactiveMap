@@ -2,7 +2,7 @@ import React from "react";
 import Modal from "react-modal";
 import style from "./RegionModal.module.css";
 
-Modal.setAppElement("#root"); // Вказуємо головний контейнер програми
+// Modal.setAppElement("#root"); // Вказуємо головний контейнер програми
 
 const RegionModal = ({ region, onClose }) => {
   return (
