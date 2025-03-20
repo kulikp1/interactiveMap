@@ -18,11 +18,10 @@ const RegionModal = ({ region, onClose }) => {
       {regionInfo && (
         <>
           <p className={style.population}>
-            <strong>Населення:</strong> {regionInfo.population.toLocaleString()}{" "}
-            осіб
+            <strong>Населення:</strong> {regionInfo.population.toString()} осіб
           </p>
           <p className={style.area}>
-            <strong>Територія:</strong> {regionInfo.area.toLocaleString()} км²
+            <strong>Територія:</strong> {regionInfo.area.toString()} км²
           </p>
         </>
       )}
