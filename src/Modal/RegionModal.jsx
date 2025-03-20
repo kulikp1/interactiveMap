@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import style from "./RegionModal.module.css";
-import regionsData from "../utils/regionsData.json"; // Імпортуємо JSON
+import regionsData from "../utils/regionsData.json";
 
 const RegionModal = ({ region, onClose }) => {
   const regionInfo = region ? regionsData[region] : null;
@@ -16,9 +16,15 @@ const RegionModal = ({ region, onClose }) => {
     >
       <h2 className={style.region}>{region ? `Область: ${region}` : ""}</h2>
       {regionInfo && (
-        <p className={style.population}>
-          Населення: {regionInfo.population.toLocaleString()} осіб
-        </p>
+        <>
+          <p className={style.population}>
+            <strong>Населення:</strong> {regionInfo.population.toLocaleString()}{" "}
+            осіб
+          </p>
+          <p className={style.area}>
+            <strong>Територія:</strong> {regionInfo.area.toLocaleString()} км²
+          </p>
+        </>
       )}
       <button onClick={onClose} className={style.closeButton}>
         Закрити
