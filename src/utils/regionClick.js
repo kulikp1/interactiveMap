@@ -23,7 +23,8 @@ const regionNames = {
   path5798: "Хмельницька",
   path5908: "Житомирська",
   path3354: "Черкасська",
-  path5934: "Вінницька"
+  path5934: "Вінницька",
+  path297: "М.Київ"
 };
 
 const handleRegionClick = (event, setSelectedRegion) => {
