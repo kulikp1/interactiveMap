@@ -29,6 +29,7 @@
 }
 
 .region,
-.population {
+.population,
+area {
   color: black;
 }
