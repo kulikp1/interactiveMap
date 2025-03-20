@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
 }
+
 svg {
   width: 80%;
   height: auto;
@@ -12,4 +13,9 @@ svg {
 
 .mapContainer path {
   cursor: pointer;
+}
+
+/* Підсвічування вибраної області */
+.selected-region {
+  fill: blue !important;
 }
