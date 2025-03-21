@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import style from "./RegionModal.module.css";
 import regionsData from "../utils/regionsData.json";
 
-Modal.setAppElement("#root"); // Вказуємо кореневий елемент
+Modal.setAppElement("#root");
 
 const RegionModal = ({ region, onClose }) => {
   const regionInfo = region ? regionsData[region] : null;
