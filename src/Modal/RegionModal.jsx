@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
 import style from "./RegionModal.module.css";
 import regionsData from "../utils/regionsData.json";
@@ -7,7 +7,12 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 Modal.setAppElement("#root");
 
 const RegionModal = ({ region, onClose }) => {
+  const [isZoomed, setIsZoomed] = useState(false);
   const regionInfo = region ? regionsData[region] : null;
+
+  const handleImageClick = () => {
+    setIsZoomed(false);
+  };
 
   return (
     <Modal
@@ -21,7 +26,13 @@ const RegionModal = ({ region, onClose }) => {
       {regionInfo && (
         <>
           <div>
-            <img src={regionInfo.img} alt={region} className={style.image} />
+            <img
+              src={regionInfo.img}
+              alt={region}
+              className={`${style.image} ${isZoomed ? style.zoomed : ""}`}
+              onMouseEnter={() => setIsZoomed(true)}
+              onClick={handleImageClick}
+            />
             <p className={style.population}>
               <strong>Населення:</strong> {regionInfo.population.toString()}{" "}
               осіб
