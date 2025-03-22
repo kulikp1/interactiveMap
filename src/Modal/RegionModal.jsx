@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "react-modal";
 import style from "./RegionModal.module.css";
 import regionsData from "../utils/regionsData.json";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 Modal.setAppElement("#root");
 
@@ -27,8 +28,8 @@ const RegionModal = ({ region, onClose }) => {
           </p>
         </>
       )}
-      <button onClick={onClose} className={style.closeButton}>
-        Закрити
+      <button onClick={onClose}>
+        <AiOutlineCloseCircle className={style.closeButton} />
       </button>
     </Modal>
   );
