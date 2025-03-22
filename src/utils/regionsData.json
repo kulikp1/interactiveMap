@@ -3,7 +3,7 @@
   "Волинська": { "population": 1027397, "area": 20143 },
   "Дніпропетровська": { "population": 3176978, "area": 31914 },
   "Донецька": { "population": 1843578, "area": 26517 },
-  "Житомирська": { "population": 1208212, "area": 29832 },
+  "Житомирська": { "population": 1208212, "area": 29832, "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/%D0%91%D1%83%D0%B4%D0%B8%D0%BD%D0%BE%D0%BA_%D0%B2%D0%B7%D0%B0%D1%94%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D1%83_%28%D0%BC%D1%96%D1%81%D1%8C%D0%BA%D0%B0_%D1%80%D0%B0%D0%B4%D0%B0%29_.jpg/2560px-%D0%91%D1%83%D0%B4%D0%B8%D0%BD%D0%BE%D0%BA_%D0%B2%D0%B7%D0%B0%D1%94%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D1%83_%28%D0%BC%D1%96%D1%81%D1%8C%D0%BA%D0%B0_%D1%80%D0%B0%D0%B4%D0%B0%29_.jpg"},
   "Ужгородська": { "population": 1253791, "area": 12777 },
   "Запорізька": { "population": 1682860, "area": 27180 },
   "Івано-Франківська": { "population": 1368097, "area": 13900 },
