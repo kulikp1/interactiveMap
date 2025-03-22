@@ -46,3 +46,23 @@
 .area {
   color: black;
 }
+
+.image {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 17px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 15px auto;
+  transition: transform 0.7s ease-in-out;
+
+  cursor: pointer;
+}
+
+.image:hover {
+  transform: scale(1.4);
+  transition: transform 0.7s ease-in-out;
+}

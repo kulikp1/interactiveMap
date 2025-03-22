@@ -20,14 +20,16 @@ const RegionModal = ({ region, onClose }) => {
       <h2 className={style.region}>{region ? `${region}` : ""}</h2>
       {regionInfo && (
         <>
-          <p className={style.population}>
-            <strong>Населення:</strong> {regionInfo.population.toString()} осіб
-          </p>
-          <p className={style.area}>
-            <strong>Територія:</strong> {regionInfo.area.toString()} км²
-          </p>
-
-          <img src={regionInfo.img} alt={region} className={style.image} />
+          <div>
+            <img src={regionInfo.img} alt={region} className={style.image} />
+            <p className={style.population}>
+              <strong>Населення:</strong> {regionInfo.population.toString()}{" "}
+              осіб
+            </p>
+            <p className={style.area}>
+              <strong>Територія:</strong> {regionInfo.area.toString()} км²
+            </p>
+          </div>
         </>
       )}
       <button onClick={onClose}>
