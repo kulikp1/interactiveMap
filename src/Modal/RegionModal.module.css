@@ -21,10 +21,6 @@
 }
 
 .closeButton {
-  /* margin-top: 20px;
-  padding: 10px 15px; */
-  /* border: none; */
-  /* background-color: #007bff; */
   color: black;
 
   width: 30px;
@@ -33,6 +29,16 @@
   position: absolute;
   right: 15px;
   top: 15px;
+
+  transition: background-color 0.6s ease, transform 0.6s ease,
+    box-shadow 0.6s ease;
+}
+
+.closeButton:hover {
+  color: red;
+  transform: scale(1.1);
+  transition: background-color 0.6s ease, transform 0.6s ease,
+    box-shadow 0.6s ease;
 }
 
 .region,
