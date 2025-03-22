@@ -22,7 +22,7 @@
   "Хмельницька": { "population": 1254702, "area": 20645 },
   "Черкаська": { "population": 1192137, "area": 20900 },
   "Чернівецька": { "population": 901632, "area": 8097 },
-  "Чернігівська": { "population": 991294, "area": 31865 },
+  "Чернігівська": { "population": 991294, "area": 31865, "img": "https://rsidehotel.com/wp-content/uploads/2018/12/chern3.jpg"},
   "М.Київ": { "population": 2962180, "area": 839 },
   "Кримська": { "population": 1910000, "area": 27000 }
 

@@ -17,7 +17,7 @@ const RegionModal = ({ region, onClose }) => {
       className={style.modal}
       overlayClassName={style.overlay}
     >
-      <h2 className={style.region}>{region ? `Область: ${region}` : ""}</h2>
+      <h2 className={style.region}>{region ? `${region}` : ""}</h2>
       {regionInfo && (
         <>
           <p className={style.population}>
@@ -26,6 +26,8 @@ const RegionModal = ({ region, onClose }) => {
           <p className={style.area}>
             <strong>Територія:</strong> {regionInfo.area.toString()} км²
           </p>
+
+          <img src={regionInfo.img} alt={region} className={style.image} />
         </>
       )}
       <button onClick={onClose}>
