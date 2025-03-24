@@ -43,7 +43,8 @@
 
 .region,
 .population,
-.area {
+.area,
+.rivers {
   color: black;
 }
 
