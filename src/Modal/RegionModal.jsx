@@ -40,6 +40,9 @@ const RegionModal = ({ region, onClose }) => {
             <p className={style.area}>
               <strong>Територія:</strong> {regionInfo.area.toString()} км²
             </p>
+            <p className={style.rivers}>
+              <strong>Річки:</strong> {regionInfo.rivers.toString()}
+            </p>
           </div>
         </>
       )}
