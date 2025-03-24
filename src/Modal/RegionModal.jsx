@@ -43,6 +43,9 @@ const RegionModal = ({ region, onClose }) => {
             <p className={style.rivers}>
               <strong>Річки:</strong> {regionInfo.rivers.toString()}
             </p>
+            <p className={style.founded}>
+              <strong>Засновано у</strong> {regionInfo.rivers.toString()} році
+            </p>
           </div>
         </>
       )}
