@@ -59,7 +59,8 @@ const RegionModal = ({ region, onClose }) => {
                 {regionInfo.phone_code.toString()}
               </p>
               <p className={style.rivers}>
-                <strong>Річки:</strong> {regionInfo.rivers.toString()}
+                <strong>Поштовий код:</strong>{" "}
+                {regionInfo.postal_code.toString()}
               </p>
               <p className={style.founded}>
                 <strong>Засновано у</strong> {regionInfo.founded.toString()}{" "}
