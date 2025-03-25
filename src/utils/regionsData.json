@@ -1,5 +1,5 @@
 {
-  "Вінницька": { "population": 1563042, "area": 26513, "img": "https://www.golos.com.ua/images_article/orig/2021/09/200921/vin.jpg", "founded": 1932, "rivers": ["Південний Буг", "Дністер"] },
+  "Вінницька": { "population": 1563042, "area": 26513, "density": 58.95, "img": "https://www.golos.com.ua/images_article/orig/2021/09/200921/vin.jpg", "founded": 1932, "rivers": ["Південний Буг", "Дністер"] },
   "Волинська": { "population": 1027397, "area": 20143, "img": "https://konkurent.ua/media/uploads/prev/2023/05/29/10/32/29/chomu-misto-lutsk-b1d58caffa9b8b8af24c19f93d56fda0.png", "founded": 1939, "rivers": ["Стир", "Західний Буг"] },
   "Дніпропетровська": { "population": 3176978, "area": 31914, "img": "https://www.volynnews.com/files/news/2016/05-19/189590/00632yp7.jpg", "founded": 1932, "rivers": ["Дніпро", "Самара"] },
   "Донецька": { "population": 1843578, "area": 26517, "img": "https://texty.org.ua/before_christ/orig/46/46920.jpg", "founded": 1932, "rivers": ["Кальміус", "Сіверський Донець"] },
