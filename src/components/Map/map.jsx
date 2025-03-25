@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import UkraineSVG from "../assets/Kharkiv_Oblast_UPA.svg?raw";
+import UkraineSVG from "../../assets/Kharkiv_Oblast_UPA.svg?raw";
 import style from "./map.module.css";
 import handleRegionClick from "../../utils/regionClick";
 import RegionModal from "../Modal/RegionModal";
