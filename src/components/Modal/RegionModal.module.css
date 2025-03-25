@@ -66,6 +66,9 @@
   transition: transform 0.7s ease-in-out;
 
   cursor: pointer;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .image:hover {
