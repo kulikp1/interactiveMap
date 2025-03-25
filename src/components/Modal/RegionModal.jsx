@@ -51,8 +51,8 @@ const RegionModal = ({ region, onClose }) => {
             </div>
             <div>
               <p className={style.population}>
-                <strong>Населення:</strong> {regionInfo.population.toString()}{" "}
-                осіб
+                <strong>Щільність населення:</strong>{" "}
+                {regionInfo.density.toString()} люд./км²
               </p>
               <p className={style.area}>
                 <strong>Територія:</strong> {regionInfo.area.toString()} км²
