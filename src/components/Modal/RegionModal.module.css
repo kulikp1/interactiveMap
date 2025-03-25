@@ -16,7 +16,7 @@
   border-radius: 10px;
   min-width: 900px;
   min-height: 650px;
-  text-align: center;
+  /* text-align: center; */
   position: relative;
 }
 
@@ -51,6 +51,7 @@
 
 .region {
   margin-top: 40px;
+  text-align: center;
 }
 
 .image {
