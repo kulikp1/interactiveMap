@@ -1,3 +1,12 @@
+.infoContainer {
+  display: flex;
+  gap: 90px;
+
+  justify-content: center;
+
+  margin-top: 60px;
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -69,7 +78,6 @@
   cursor: pointer;
 
   margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .image:hover {

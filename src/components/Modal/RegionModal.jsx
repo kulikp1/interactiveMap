@@ -25,27 +25,46 @@ const RegionModal = ({ region, onClose }) => {
       <h2 className={style.region}>{region ? `${region}` : ""}</h2>
       {regionInfo && (
         <>
+          <img
+            src={regionInfo.img}
+            alt={region}
+            className={`${style.image} ${isZoomed ? style.zoomed : ""}`}
+            onMouseEnter={() => setIsZoomed(true)}
+            onClick={handleImageClick}
+          />
           <div className={style.infoContainer}>
-            <img
-              src={regionInfo.img}
-              alt={region}
-              className={`${style.image} ${isZoomed ? style.zoomed : ""}`}
-              onMouseEnter={() => setIsZoomed(true)}
-              onClick={handleImageClick}
-            />
-            <p className={style.population}>
-              <strong>Населення:</strong> {regionInfo.population.toString()}{" "}
-              осіб
-            </p>
-            <p className={style.area}>
-              <strong>Територія:</strong> {regionInfo.area.toString()} км²
-            </p>
-            <p className={style.rivers}>
-              <strong>Річки:</strong> {regionInfo.rivers.toString()}
-            </p>
-            <p className={style.founded}>
-              <strong>Засновано у</strong> {regionInfo.founded.toString()} році
-            </p>
+            <div>
+              <p className={style.population}>
+                <strong>Населення:</strong> {regionInfo.population.toString()}{" "}
+                осіб
+              </p>
+              <p className={style.area}>
+                <strong>Територія:</strong> {regionInfo.area.toString()} км²
+              </p>
+              <p className={style.rivers}>
+                <strong>Річки:</strong> {regionInfo.rivers.toString()}
+              </p>
+              <p className={style.founded}>
+                <strong>Засновано у</strong> {regionInfo.founded.toString()}{" "}
+                році
+              </p>
+            </div>
+            <div>
+              <p className={style.population}>
+                <strong>Населення:</strong> {regionInfo.population.toString()}{" "}
+                осіб
+              </p>
+              <p className={style.area}>
+                <strong>Територія:</strong> {regionInfo.area.toString()} км²
+              </p>
+              <p className={style.rivers}>
+                <strong>Річки:</strong> {regionInfo.rivers.toString()}
+              </p>
+              <p className={style.founded}>
+                <strong>Засновано у</strong> {regionInfo.founded.toString()}{" "}
+                році
+              </p>
+            </div>
           </div>
         </>
       )}
