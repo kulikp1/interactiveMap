@@ -24,7 +24,7 @@ const UkraineMap = () => {
 
   const onRegionClick = (event) => {
     handleRegionClick(event, setSelectedRegion);
-    setSelectedRegionId(event.target.id); // Збереження ID натиснутої області
+    setSelectedRegionId(event.target.id);
   };
 
   return (
