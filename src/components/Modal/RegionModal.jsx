@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import style from "./RegionModal.module.css";
-import regionsData from "../utils/regionsData.json";
+import regionsData from "../../utils/regionsData.json";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
 Modal.setAppElement("#root");

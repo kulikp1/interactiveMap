@@ -2,7 +2,7 @@
 // import reactLogo from "./assets/react.svg";
 import "./App.css";
 
-import UkraineMap from "./Map/map";
+import UkraineMap from "./components/Map/map";
 
 function App() {
   return (
