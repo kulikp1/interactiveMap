@@ -55,7 +55,8 @@ const RegionModal = ({ region, onClose }) => {
                 {regionInfo.density.toString()} люд./км²
               </p>
               <p className={style.area}>
-                <strong>Територія:</strong> {regionInfo.area.toString()} км²
+                <strong>Телефонний код:</strong>{" "}
+                {regionInfo.phone_code.toString()}
               </p>
               <p className={style.rivers}>
                 <strong>Річки:</strong> {regionInfo.rivers.toString()}
