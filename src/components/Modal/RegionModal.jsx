@@ -25,7 +25,7 @@ const RegionModal = ({ region, onClose }) => {
       <h2 className={style.region}>{region ? `${region}` : ""}</h2>
       {regionInfo && (
         <>
-          <div>
+          <div className={style.infoContainer}>
             <img
               src={regionInfo.img}
               alt={region}
