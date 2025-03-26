@@ -68,6 +68,8 @@ const RegionModal = ({ region, onClose }) => {
               </p>
             </div>
           </div>
+          <button className={style.weather}>Переглянути погоду</button>
+          <button className={style.statistic}>Статистика</button>
         </>
       )}
       <button onClick={onClose}>
