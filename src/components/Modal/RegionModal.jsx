@@ -63,8 +63,8 @@ const RegionModal = ({ region, onClose }) => {
                 {regionInfo.postal_code.toString()}
               </p>
               <p className={style.founded}>
-                <strong>Засновано у</strong> {regionInfo.founded.toString()}{" "}
-                році
+                <strong>Кількість районів:</strong>{" "}
+                {regionInfo.districts.toString()}
               </p>
             </div>
           </div>
