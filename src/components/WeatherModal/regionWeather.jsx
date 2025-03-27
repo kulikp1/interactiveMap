@@ -72,7 +72,7 @@ const RegionWeather = ({ region, onClose }) => {
       {loading ? (
         <p>Завантаження...</p>
       ) : weather ? (
-        <div>
+        <div className={style.descr}>
           <p>Температура: {weather.main.temp}°C</p>
           <p>Відчувається як: {weather.main.feels_like}°C</p>
           <p>Погода: {weather.weather[0].description}</p>
