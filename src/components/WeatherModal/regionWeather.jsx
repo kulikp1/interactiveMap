@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import style from "./RegionWeather.module.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
-const API_KEY = "YOUR_OPENWEATHERMAP_API_KEY"; // Замініть на свій ключ
+const API_KEY = "d11483c5e5053b6f9eaeed1eb6bf3e23";
 
 const RegionWeather = ({ region, onClose }) => {
   const [weather, setWeather] = useState(null);
@@ -13,15 +13,59 @@ const RegionWeather = ({ region, onClose }) => {
   useEffect(() => {
     if (!region) return;
 
+    const cityMapping = {
+      Київська: "Kyiv",
+      Сумська: "Sumy",
+      Харківська: "Kharkiv",
+      Чернігівська: "Chernihiv",
+      Луганська: "Luhansk",
+      Донецька: "Donetsk",
+      Кримська: "Simferopol",
+      Одеська: "Odesa",
+      Ужгородська: "Uzhhorod",
+      Полтавська: "Poltava",
+      Дніпропетровська: "Dnipro",
+      Запорізька: "Zaporizhzhia",
+      Херсонська: "Kherson",
+      Миколаївська: "Mykolaiv",
+      Кіровоградська: "Kropyvnytskyi",
+      Луцька: "Lutsk",
+      Львівська: "Lviv",
+      "Івано-Франківська": "Ivano-Frankivsk",
+      Чернівецька: "Chernivtsi",
+      Тернопільська: "Ternopil",
+      Рівненська: "Rivne",
+      Хмельницька: "Khmelnytskyi",
+      Житомирська: "Zhytomyr",
+      Черкасська: "Cherkasy",
+      Вінницька: "Vinnytsia",
+      "М.Київ": "Kyiv",
+    };
+
+    const cityName = cityMapping[region] || region;
+
     const fetchWeather = async () => {
       try {
+        console.log(`Запит до API для міста: ${cityName}`); // Логування міста
+
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${region},UA&appid=${API_KEY}&units=metric&lang=uk`
+          `https://api.openweathermap.org/data/2.5/weather?q=${cityName},UA&appid=${API_KEY}&units=metric&lang=uk`
         );
-        if (!response.ok) throw new Error("Помилка отримання погоди");
+
+        console.log("Статус відповіді:", response.status); // Лог статусу
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          console.error("Помилка відповіді:", errorText); // Лог тексту помилки
+          throw new Error("Помилка отримання погоди");
+        }
+
         const data = await response.json();
+        console.log("Отримані дані:", data); // Лог даних
+
         setWeather(data);
       } catch (err) {
+        console.error("Помилка запиту:", err.message);
         setError(err.message);
       } finally {
         setLoading(false);
