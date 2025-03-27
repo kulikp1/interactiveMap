@@ -3,16 +3,21 @@ import Modal from "react-modal";
 import style from "./RegionModal.module.css";
 import regionsData from "../../utils/regionsData.json";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import RegionWeather from "../WeatherModal/regionWeather"; // Додали імпорт
 
 Modal.setAppElement("#root");
 
 const RegionModal = ({ region, onClose }) => {
   const [isZoomed, setIsZoomed] = useState(false);
+  const [isWeatherModalOpen, setIsWeatherModalOpen] = useState(false); // Стан для модалки погоди
   const regionInfo = region ? regionsData[region] : null;
 
   const handleImageClick = () => {
     setIsZoomed(false);
   };
+
+  const openWeatherModal = () => setIsWeatherModalOpen(true);
+  const closeWeatherModal = () => setIsWeatherModalOpen(false);
 
   return (
     <Modal
@@ -69,7 +74,9 @@ const RegionModal = ({ region, onClose }) => {
             </div>
           </div>
           <div className={style.btnContainer}>
-            <button className={style.weather}>Переглянути погоду</button>
+            <button className={style.weather} onClick={openWeatherModal}>
+              Переглянути погоду
+            </button>
             <button className={style.statistic}>Статистика</button>
           </div>
         </>
@@ -77,6 +84,10 @@ const RegionModal = ({ region, onClose }) => {
       <button onClick={onClose}>
         <AiOutlineCloseCircle className={style.closeButton} />
       </button>
+
+      {isWeatherModalOpen && (
+        <RegionWeather region={region} onClose={closeWeatherModal} />
+      )}
     </Modal>
   );
 };
