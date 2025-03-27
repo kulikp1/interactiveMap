@@ -46,22 +46,22 @@ const RegionWeather = ({ region, onClose }) => {
 
     const fetchWeather = async () => {
       try {
-        console.log(`Запит до API для міста: ${cityName}`); // Логування міста
+        console.log(`Запит до API для міста: ${cityName}`);
 
         const response = await fetch(
           `https://api.openweathermap.org/data/2.5/weather?q=${cityName},UA&appid=${API_KEY}&units=metric&lang=uk`
         );
 
-        console.log("Статус відповіді:", response.status); // Лог статусу
+        console.log("Статус відповіді:", response.status);
 
         if (!response.ok) {
           const errorText = await response.text();
-          console.error("Помилка відповіді:", errorText); // Лог тексту помилки
+          console.error("Помилка відповіді:", errorText);
           throw new Error("Помилка отримання погоди");
         }
 
         const data = await response.json();
-        console.log("Отримані дані:", data); // Лог даних
+        console.log("Отримані дані:", data);
 
         setWeather(data);
       } catch (err) {
