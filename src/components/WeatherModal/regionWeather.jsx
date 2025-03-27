@@ -67,7 +67,7 @@ const RegionWeather = ({ region, onClose }) => {
       className={style.modal}
       overlayClassName={style.overlay}
     >
-      <h2 className={style.title}>Погода в {region}</h2>
+      <h2 className={style.title}>Погода в {cityMapping[region]}</h2>
 
       {loading ? (
         <p>Завантаження...</p>
