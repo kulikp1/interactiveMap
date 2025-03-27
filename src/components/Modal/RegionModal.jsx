@@ -3,13 +3,13 @@ import Modal from "react-modal";
 import style from "./RegionModal.module.css";
 import regionsData from "../../utils/regionsData.json";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import RegionWeather from "../WeatherModal/regionWeather"; // Додали імпорт
+import RegionWeather from "../WeatherModal/regionWeather";
 
 Modal.setAppElement("#root");
 
 const RegionModal = ({ region, onClose }) => {
   const [isZoomed, setIsZoomed] = useState(false);
-  const [isWeatherModalOpen, setIsWeatherModalOpen] = useState(false); // Стан для модалки погоди
+  const [isWeatherModalOpen, setIsWeatherModalOpen] = useState(false);
   const regionInfo = region ? regionsData[region] : null;
 
   const handleImageClick = () => {
