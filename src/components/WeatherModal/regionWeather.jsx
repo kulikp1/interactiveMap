@@ -5,71 +5,56 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const API_KEY = "5f01f17d8186a02f8a47f0c329ac5c39";
 
+const cityMapping = {
+  Київська: "Kyiv",
+  Сумська: "Sumy",
+  Харківська: "Kharkiv",
+  Чернігівська: "Chernihiv",
+  Луганська: "Luhansk",
+  Донецька: "Donetsk",
+  Кримська: "Simferopol",
+  Одеська: "Odesa",
+  Ужгородська: "Uzhhorod",
+  Полтавська: "Poltava",
+  Дніпропетровська: "Dnipro",
+  Запорізька: "Zaporizhzhia",
+  Херсонська: "Kherson",
+  Миколаївська: "Mykolaiv",
+  Кіровоградська: "Kropyvnytskyi",
+  Луцька: "Lutsk",
+  Львівська: "Lviv",
+  "Івано-Франківська": "Ivano-Frankivsk",
+  Чернівецька: "Chernivtsi",
+  Тернопільська: "Ternopil",
+  Рівненська: "Rivne",
+  Хмельницька: "Khmelnytskyi",
+  Житомирська: "Zhytomyr",
+  Черкасська: "Cherkasy",
+  Вінницька: "Vinnytsia",
+  "М.Київ": "Kyiv",
+};
+
 const RegionWeather = ({ region, onClose }) => {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!region) return;
 
-    const cityMapping = {
-      Київська: "Kyiv",
-      Сумська: "Sumy",
-      Харківська: "Kharkiv",
-      Чернігівська: "Chernihiv",
-      Луганська: "Luhansk",
-      Донецька: "Donetsk",
-      Кримська: "Simferopol",
-      Одеська: "Odesa",
-      Ужгородська: "Uzhhorod",
-      Полтавська: "Poltava",
-      Дніпропетровська: "Dnipro",
-      Запорізька: "Zaporizhzhia",
-      Херсонська: "Kherson",
-      Миколаївська: "Mykolaiv",
-      Кіровоградська: "Kropyvnytskyi",
-      Луцька: "Lutsk",
-      Львівська: "Lviv",
-      "Івано-Франківська": "Ivano-Frankivsk",
-      Чернівецька: "Chernivtsi",
-      Тернопільська: "Ternopil",
-      Рівненська: "Rivne",
-      Хмельницька: "Khmelnytskyi",
-      Житомирська: "Zhytomyr",
-      Черкасська: "Cherkasy",
-      Вінницька: "Vinnytsia",
-      "М.Київ": "Kyiv",
-    };
-
-    const cityName = cityMapping[region] || region;
-
     const fetchWeather = async () => {
       setLoading(true);
-      setError(null);
-
       try {
-        console.log(`Запит до API для міста: ${cityName}`);
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${cityName},UA&appid=${API_KEY}&units=metric&lang=uk`
+          `https://api.openweathermap.org/data/2.5/weather?q=${
+            cityMapping[region] || region
+          },UA&appid=${API_KEY}&units=metric&lang=uk`
         );
-
-        console.log("Статус відповіді:", response.status);
-
-        if (!response.ok) {
-          throw new Error("Помилка отримання погоди");
-        }
-
-        const data = await response.json();
-        console.log("Отримані дані:", data);
-
-        setWeather(data);
-      } catch (err) {
-        console.error("Помилка запиту:", err.message);
-        setError("Не вдалося завантажити погоду. Спробуйте ще раз.");
-      } finally {
-        setLoading(false);
+        if (!response.ok) throw new Error();
+        setWeather(await response.json());
+      } catch {
+        setWeather(null);
       }
+      setLoading(false);
     };
 
     fetchWeather();
@@ -79,37 +64,27 @@ const RegionWeather = ({ region, onClose }) => {
     <Modal
       isOpen={!!region}
       onRequestClose={onClose}
-      contentLabel="Погода в області"
       className={style.modal}
       overlayClassName={style.overlay}
     >
       <h2 className={style.title}>Погода в {region}</h2>
 
-      {loading && <p className={style.loading}>Завантаження...</p>}
-      {error && <p className={style.error}>{error}</p>}
-
-      {weather && weather.main && (
-        <div className={style.weatherContainer}>
-          <p>
-            <strong>Температура:</strong> {weather.main.temp}°C
-          </p>
-          <p>
-            <strong>Відчувається як:</strong> {weather.main.feels_like}°C
-          </p>
-          <p>
-            <strong>Погода:</strong> {weather.weather[0].description}
-          </p>
-          <p>
-            <strong>Вологість:</strong> {weather.main.humidity}%
-          </p>
-          <p>
-            <strong>Швидкість вітру:</strong> {weather.wind.speed} м/с
-          </p>
+      {loading ? (
+        <p>Завантаження...</p>
+      ) : weather ? (
+        <div>
+          <p>Температура: {weather.main.temp}°C</p>
+          <p>Відчувається як: {weather.main.feels_like}°C</p>
+          <p>Погода: {weather.weather[0].description}</p>
+          <p>Вологість: {weather.main.humidity}%</p>
+          <p>Вітер: {weather.wind.speed} м/с</p>
           <img
             src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
-            alt="Іконка погоди"
+            alt="Погода"
           />
         </div>
+      ) : (
+        <p>Не вдалося отримати дані</p>
       )}
 
       <button onClick={onClose} className={style.closeButton}>
