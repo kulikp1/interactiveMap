@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import style from "./RegionWeather.module.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
-const API_KEY = "d11483c5e5053b6f9eaeed1eb6bf3e23";
+const API_KEY = "5f01f17d8186a02f8a47f0c329ac5c39";
 
 const RegionWeather = ({ region, onClose }) => {
   const [weather, setWeather] = useState(null);
@@ -51,6 +51,8 @@ const RegionWeather = ({ region, onClose }) => {
         const response = await fetch(
           `https://api.openweathermap.org/data/2.5/weather?q=${cityName},UA&appid=${API_KEY}&units=metric&lang=uk`
         );
+
+        console.log(`API_KEY: ${API_KEY}`);
 
         console.log("Статус відповіді:", response.status);
 
