@@ -7,7 +7,7 @@ const API_KEY = "5f01f17d8186a02f8a47f0c329ac5c39";
 
 const RegionWeather = ({ region, onClose }) => {
   const [weather, setWeather] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -45,20 +45,18 @@ const RegionWeather = ({ region, onClose }) => {
     const cityName = cityMapping[region] || region;
 
     const fetchWeather = async () => {
+      setLoading(true);
+      setError(null);
+
       try {
         console.log(`Запит до API для міста: ${cityName}`);
-
         const response = await fetch(
           `https://api.openweathermap.org/data/2.5/weather?q=${cityName},UA&appid=${API_KEY}&units=metric&lang=uk`
         );
 
-        console.log(`API_KEY: ${API_KEY}`);
-
         console.log("Статус відповіді:", response.status);
 
         if (!response.ok) {
-          const errorText = await response.text();
-          console.error("Помилка відповіді:", errorText);
           throw new Error("Помилка отримання погоди");
         }
 
@@ -68,7 +66,7 @@ const RegionWeather = ({ region, onClose }) => {
         setWeather(data);
       } catch (err) {
         console.error("Помилка запиту:", err.message);
-        setError(err.message);
+        setError("Не вдалося завантажити погоду. Спробуйте ще раз.");
       } finally {
         setLoading(false);
       }
@@ -90,7 +88,7 @@ const RegionWeather = ({ region, onClose }) => {
       {loading && <p className={style.loading}>Завантаження...</p>}
       {error && <p className={style.error}>{error}</p>}
 
-      {weather && (
+      {weather && weather.main && (
         <div className={style.weatherContainer}>
           <p>
             <strong>Температура:</strong> {weather.main.temp}°C
