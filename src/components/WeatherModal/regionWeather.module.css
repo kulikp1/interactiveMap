@@ -7,13 +7,6 @@
   text-align: center;
 }
 
-h1,
-h2,
-h3,
-p {
-  color: black;
-}
-
 .overlay {
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
