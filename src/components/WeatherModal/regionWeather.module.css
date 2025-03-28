@@ -1,7 +1,10 @@
 .modal {
   background: white;
   padding: 20px;
-  width: 400px;
+
+  min-width: 300px;
+  min-height: 300px;
+
   border-radius: 10px;
   position: relative;
   text-align: center;
@@ -20,7 +23,7 @@
 }
 
 .title {
-  margin-bottom: 10px;
+  /* margin-top: 20px; */
   font-size: 20px;
 }
 
@@ -40,8 +43,8 @@
   height: 40px;
 
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: 5px;
+  top: 5px;
 
   transition: background-color 0.6s ease, transform 0.6s ease,
     box-shadow 0.6s ease;
@@ -52,4 +55,18 @@
   transform: scale(1.1);
   transition: background-color 0.6s ease, transform 0.6s ease,
     box-shadow 0.6s ease;
+}
+
+.descr {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0 10px 0;
+}
+
+.img {
+  width: 60px;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
 }

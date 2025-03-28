@@ -73,15 +73,16 @@ const RegionWeather = ({ region, onClose }) => {
         <p>Завантаження...</p>
       ) : weather ? (
         <div className={style.descr}>
+          <img
+            className={style.img}
+            src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
+            alt="Погода"
+          />
           <p>Температура: {weather.main.temp}°C</p>
           <p>Відчувається як: {weather.main.feels_like}°C</p>
           <p>Погода: {weather.weather[0].description}</p>
           <p>Вологість: {weather.main.humidity}%</p>
           <p>Вітер: {weather.wind.speed} м/с</p>
-          <img
-            src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
-            alt="Погода"
-          />
         </div>
       ) : (
         <p>Не вдалося отримати дані</p>
