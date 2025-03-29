@@ -7,7 +7,9 @@ import UkraineMap from "./components/Map/map";
 function App() {
   return (
     <div>
-      <UkraineMap />
+      <Routes>
+        <Route path="/" element={<UkraineMap />} />
+      </Routes>
     </div>
   );
 }
