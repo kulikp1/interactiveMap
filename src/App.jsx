@@ -1,16 +1,15 @@
-// import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import UkraineMap from "./components/Map/map";
 
 function App() {
   return (
-    <div>
+    <Router>
       <Routes>
         <Route path="/" element={<UkraineMap />} />
       </Routes>
-    </div>
+    </Router>
   );
 }
 
