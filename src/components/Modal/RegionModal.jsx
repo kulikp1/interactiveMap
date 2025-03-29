@@ -4,6 +4,7 @@ import style from "./RegionModal.module.css";
 import regionsData from "../../utils/regionsData.json";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import RegionWeather from "../WeatherModal/regionWeather";
+import { Link } from "react-router-dom";
 
 Modal.setAppElement("#root");
 
@@ -77,7 +78,10 @@ const RegionModal = ({ region, onClose }) => {
             <button className={style.weather} onClick={openWeatherModal}>
               Переглянути погоду
             </button>
-            <button className={style.statistic}>Статистика</button>
+
+            <Link to="/statistic">
+              <button className={style.statistic}>Статистика</button>
+            </Link>
           </div>
         </>
       )}
