@@ -9,7 +9,6 @@ const UkraineMap = () => {
   const [selectedRegionId, setSelectedRegionId] = useState(null);
 
   useEffect(() => {
-    // Видаляємо попереднє виділення при зміні вибраної області
     document.querySelectorAll(`.${style.selected}`).forEach((el) => {
       el.classList.remove(style.selected);
     });
