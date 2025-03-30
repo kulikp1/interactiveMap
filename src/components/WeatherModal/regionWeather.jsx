@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import style from "./RegionWeather.module.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import { env } from ".env";
 
-const API_KEY = env("API_KEY");
+const API_KEY = "5f01f17d8186a02f8a47f0c329ac5c39";
 
 const cityMapping = {
   Київська: "Kyiv",
