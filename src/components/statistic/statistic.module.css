@@ -1,33 +1,62 @@
+/* Основний контейнер */
 .mainContainer {
-  width: 800px;
-  height: 600px;
-  background: linear-gradient(
-    135deg,
-    #f5f7fa,
-    #dfe3e8
-  ); /* Ніжний світло-сірий градієнт */
-  border-radius: 20px; /* Більш плавні кути */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* Виразна тінь */
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #eceff4, #d7dae0);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  color: #333; /* Темно-сірий текст для контрасту */
-  font-family: "Poppins", sans-serif; /* Сучасний шрифт */
-  transition: all 0.3s ease-in-out;
-}
-
-/* Анімація при наведенні */
-.mainContainer:hover {
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
-  transform: translateY(-10px);
-}
-
-.descr {
-  color: #555; /* Стильний темно-сірий */
-  /* font-size: 18px;
-  font-weight: 500;
+  justify-content: space-between; /* Рівномірне розташування */
+  padding: 40px 20px;
   text-align: center;
-  max-width: 600px; */
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Заголовок */
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  flex-shrink: 0; /* Не стискається */
+}
+
+/* Контейнер для статистики (сітка) */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 80%;
+  flex-grow: 1; /* Заповнює простір */
+  align-items: center; /* Вирівнює картки по центру */
+}
+
+/* Картки зі статистикою */
+.statItem {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Ефект підняття при наведенні */
+.statItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Заголовки карток */
+.statItem h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Текст у картках */
+.statItem p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #222;
 }
