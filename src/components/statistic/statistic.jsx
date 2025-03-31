@@ -3,7 +3,7 @@ import css from "./statistic.module.css";
 const Statistic = () => {
   return (
     <div className={css.mainContainer}>
-      <h1>Statistic page</h1>
+      <h1 className={css.descr}>Statistic page</h1>
     </div>
   );
 };
