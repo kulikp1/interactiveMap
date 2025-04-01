@@ -4,9 +4,6 @@ import style from "./RegionWeather.module.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
-// console.log("API_KEY:", API_KEY);
-
-// const API_KEY = "5f01f17d8186a02f8a47f0c329ac5c39";
 
 const cityMapping = {
   Київська: "Kyiv",
