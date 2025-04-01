@@ -79,7 +79,7 @@ const RegionModal = ({ region, onClose }) => {
               Переглянути погоду
             </button>
 
-            <Link to="/statistic">
+            <Link to={`/statistic?region=${region}`}>
               <button className={style.statistic}>Статистика</button>
             </Link>
           </div>

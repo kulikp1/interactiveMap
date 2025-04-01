@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import css from "./statistic.module.css";
 import data from "../../utils/tourismData";
 import statisticsData from "../../utils/statisticsData";
@@ -11,9 +12,13 @@ import {
 } from "recharts";
 
 const Statistic = () => {
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const region = params.get("region") || "Київ"; // За замовчуванням Київ, якщо параметр не передано
+
   return (
     <div className={css.mainContainer}>
-      <h1 className={css.title}>Статистика Києва для туристів</h1>
+      <h1 className={css.title}>{region} область статистика для туристів</h1>
 
       <div className={css.contentContainer}>
         {/* Ліва частина - Статистика */}
