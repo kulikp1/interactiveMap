@@ -1,4 +1,4 @@
-export const cityMapping = {
+const cityMapping = {
   Київська: "Kyiv",
   Сумська: "Sumy",
   Харківська: "Kharkiv",
@@ -26,3 +26,5 @@ export const cityMapping = {
   Вінницька: "Vinnytsia",
   "М.Київ": "Kyiv",
 };
+
+export default cityMapping;
