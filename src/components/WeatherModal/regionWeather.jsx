@@ -2,37 +2,9 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import style from "./RegionWeather.module.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import cityMapping from "../../utils/cityMapping";
 
 const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
-
-const cityMapping = {
-  Київська: "Kyiv",
-  Сумська: "Sumy",
-  Харківська: "Kharkiv",
-  Чернігівська: "Chernihiv",
-  Луганська: "Luhansk",
-  Донецька: "Donetsk",
-  Кримська: "Simferopol",
-  Одеська: "Odesa",
-  Ужгородська: "Uzhhorod",
-  Полтавська: "Poltava",
-  Дніпропетровська: "Dnipro",
-  Запорізька: "Zaporizhzhia",
-  Херсонська: "Kherson",
-  Миколаївська: "Mykolaiv",
-  Кіровоградська: "Kropyvnytskyi",
-  Луцька: "Lutsk",
-  Львівська: "Lviv",
-  "Івано-Франківська": "Ivano-Frankivsk",
-  Чернівецька: "Chernivtsi",
-  Тернопільська: "Ternopil",
-  Рівненська: "Rivne",
-  Хмельницька: "Khmelnytskyi",
-  Житомирська: "Zhytomyr",
-  Черкасська: "Cherkasy",
-  Вінницька: "Vinnytsia",
-  "М.Київ": "Kyiv",
-};
 
 const RegionWeather = ({ region, onClose }) => {
   const [weather, setWeather] = useState(null);

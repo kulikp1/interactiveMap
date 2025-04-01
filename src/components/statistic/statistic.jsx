@@ -2,6 +2,8 @@ import { useLocation } from "react-router-dom";
 import css from "./statistic.module.css";
 import tourismData from "../../utils/tourismData";
 import statisticsData from "../../utils/statisticsData";
+import cityMapping from "../../utils/cityMapping";
+
 import {
   BarChart,
   Bar,
@@ -11,22 +13,13 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-// Мапінг українських назв на англійські ключі у tourismData
-const regionMap = {
-  Київська: "Kyiv",
-  Львівська: "Lviv",
-  Одеська: "Odesa",
-  Харківська: "Kharkiv",
-  Дніпропетровська: "Dnipro",
-};
-
 const Statistic = () => {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const regionUA = params.get("region") || "Київська"; // За замовчуванням Київська область
 
   // Перетворюємо українську назву на ключ у tourismData
-  const region = regionMap[regionUA] || "Kyiv";
+  const region = cityMapping[regionUA] || "Kyiv";
 
   console.log("Отриманий регіон:", regionUA);
   console.log("Відповідний ключ у tourismData:", region);
