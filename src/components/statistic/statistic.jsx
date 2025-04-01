@@ -70,7 +70,7 @@ const Statistic = () => {
 
         {/* Права частина - Графік */}
         <div className={css.rightContainer}>
-          <h2>📊 Візуалізація статистики</h2>
+          <h2 className={css.visualTitle}>Візуалізація статистики</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={data}>
               <XAxis dataKey="name" />
