@@ -8,11 +8,20 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+// const data = [
+//   { name: "Населення", value: 2.9 },
+//   { name: "Туристи", value: 2 },
+//   { name: "Станції метро", value: 52 },
+//   { name: "Зелена зона (%)", value: 46 },
+// ];
+
 const data = [
-  { name: "Населення", value: 2.9 },
-  { name: "Туристи", value: 2 },
-  { name: "Станції метро", value: 52 },
-  { name: "Зелена зона (%)", value: 46 },
+  { year: "2018", visitors: 1.9 },
+  { year: "2019", visitors: 2.2 },
+  { year: "2020", visitors: 1.3 },
+  { year: "2021", visitors: 1.8 },
+  { year: "2022", visitors: 2.1 },
+  { year: "2023", visitors: 2.4 },
 ];
 
 const Statistic = () => {
@@ -70,13 +79,15 @@ const Statistic = () => {
 
         {/* Права частина - Графік */}
         <div className={css.rightContainer}>
-          <h2 className={css.visualTitle}>Візуалізація статистики</h2>
+          <h2 className={css.visualTitle}>
+            Відвідуваність міста млн. люд. (2018-2023)
+          </h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={data}>
-              <XAxis dataKey="name" />
+              <XAxis dataKey="year" />
               <YAxis />
               <Tooltip />
-              <Bar dataKey="value" fill="#4CAF50" />
+              <Bar dataKey="visitors" fill="#4CAF50" />
             </BarChart>
           </ResponsiveContainer>
         </div>
