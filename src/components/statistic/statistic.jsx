@@ -46,7 +46,7 @@ const Statistic = () => {
             </div>
 
             <div className={css.statItem}>
-              <h2>💰 Готелі (середня ціна)</h2>
+              <h2>💰 Готелі </h2>
               <p>
                 <strong>$40-100</strong> за добу
               </p>
