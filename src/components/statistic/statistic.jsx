@@ -16,7 +16,7 @@ import {
 const Statistic = () => {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
-  const regionUA = params.get("region") || "Київ"; // За замовчуванням Київ
+  const regionUA = params.get("region") || "Київ";
   const region = cityMapping[regionUA] || "Kyiv";
 
   console.log("Отриманий регіон:", regionUA);
