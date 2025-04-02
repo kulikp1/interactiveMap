@@ -50,11 +50,22 @@ const RegionWeather = ({ region, onClose }) => {
             src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
             alt="Погода"
           />
-          <p>Температура: {weather.main.temp}°C</p>
-          <p>Відчувається як: {weather.main.feels_like}°C</p>
-          <p>Погода: {weather.weather[0].description}</p>
-          <p>Вологість: {weather.main.humidity}%</p>
-          <p>Вітер: {weather.wind.speed} м/с</p>
+          <p>
+            {" "}
+            <strong>Температура:</strong> {weather.main.temp}°C
+          </p>
+          <p>
+            <strong>Відчувається як:</strong> {weather.main.feels_like}°C
+          </p>
+          <p>
+            <strong>Погода:</strong> {weather.weather[0].description}
+          </p>
+          <p>
+            <strong>Вологість:</strong> {weather.main.humidity}%
+          </p>
+          <p>
+            <strong>Вітер:</strong> {weather.wind.speed} м/с
+          </p>
         </div>
       ) : (
         <p>Не вдалося отримати дані</p>
