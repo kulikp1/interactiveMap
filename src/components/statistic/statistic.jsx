@@ -16,9 +16,7 @@ import {
 const Statistic = () => {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
-  const regionUA = params.get("region"); // За замовчуванням Київська область
-
-  // Перетворюємо українську назву на ключ у tourismData
+  const regionUA = params.get("region") || "Київ"; // За замовчуванням Київ
   const region = cityMapping[regionUA] || "Kyiv";
 
   console.log("Отриманий регіон:", regionUA);
@@ -26,27 +24,31 @@ const Statistic = () => {
   console.log("Доступні дані:", tourismData);
 
   const data = tourismData[region] || [];
+  const cityStats = statisticsData[region] || [];
 
   console.log("Дані для регіону:", data);
+  console.log("Статистика для міста:", cityStats);
 
   return (
     <div className={css.mainContainer}>
-      <h1 className={css.title}>
-        {regionUA} область – статистика для туристів
-      </h1>
+      <h1 className={css.title}>{regionUA} – статистика для туристів</h1>
 
       <div className={css.contentContainer}>
         {/* Ліва частина - Загальна статистика */}
         <div className={css.leftContainer}>
           <div className={css.gridContainer}>
-            {statisticsData.map((item) => (
-              <div key={item.id} className={css.statItem}>
-                <h2>{item.title}</h2>
-                <p>
-                  <strong>{item.value}</strong>
-                </p>
-              </div>
-            ))}
+            {cityStats.length > 0 ? (
+              cityStats.map((item) => (
+                <div key={item.id} className={css.statItem}>
+                  <h2>{item.title}</h2>
+                  <p>
+                    <strong>{item.value}</strong>
+                  </p>
+                </div>
+              ))
+            ) : (
+              <p>Немає статистичних даних для цього міста</p>
+            )}
           </div>
         </div>
 
