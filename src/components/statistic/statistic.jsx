@@ -16,7 +16,7 @@ import {
 const Statistic = () => {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
-  const regionUA = params.get("region") || "Київська"; // За замовчуванням Київська область
+  const regionUA = params.get("region"); // За замовчуванням Київська область
 
   // Перетворюємо українську назву на ключ у tourismData
   const region = cityMapping[regionUA] || "Kyiv";
