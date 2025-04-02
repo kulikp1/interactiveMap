@@ -24,7 +24,7 @@ const cityMapping = {
   Житомирська: "Zhytomyr",
   Черкасська: "Cherkasy",
   Вінницька: "Vinnytsia",
-  "М.Київ": "Kyiv",
+  "М.Київ": "Kyivska",
 };
 
 export default cityMapping;
