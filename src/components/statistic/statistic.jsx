@@ -31,7 +31,9 @@ const Statistic = () => {
 
   return (
     <div className={css.mainContainer}>
-      <h1 className={css.title}>{regionUA} – статистика для туристів</h1>
+      <h1 className={css.title}>
+        {regionUA} область – статистика для туристів
+      </h1>
 
       <div className={css.contentContainer}>
         {/* Ліва частина - Загальна статистика */}
