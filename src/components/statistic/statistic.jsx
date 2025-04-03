@@ -19,15 +19,8 @@ const Statistic = () => {
   const regionUA = params.get("region") || "Київ";
   const region = cityMapping[regionUA] || "Kyiv";
 
-  console.log("Отриманий регіон:", regionUA);
-  console.log("Відповідний ключ у tourismData:", region);
-  console.log("Доступні дані:", tourismData);
-
   const data = tourismData[region] || [];
   const cityStats = statisticsData[region] || [];
-
-  console.log("Дані для регіону:", data);
-  console.log("Статистика для міста:", cityStats);
 
   return (
     <div className={css.mainContainer}>
@@ -36,10 +29,9 @@ const Statistic = () => {
       </h1>
 
       <div className={css.contentContainer}>
-        {/* Ліва частина - Загальна статистика */}
         <div className={css.leftContainer}>
           <div className={css.gridContainer}>
-            {cityStats.length > 0 ? (
+            {cityStats.length ? (
               cityStats.map((item) => (
                 <div key={item.id} className={css.statItem}>
                   <h2>{item.title}</h2>
@@ -54,12 +46,11 @@ const Statistic = () => {
           </div>
         </div>
 
-        {/* Права частина - Графік */}
         <div className={css.rightContainer}>
           <h2 className={css.visualTitle}>
             Відвідуваність міста (млн. люд.) 2018-2023
           </h2>
-          {data.length > 0 ? (
+          {data.length ? (
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={data}>
                 <XAxis dataKey="year" />
