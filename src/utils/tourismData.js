@@ -229,10 +229,7 @@ const tourismData = {
 
 
   
-  // "Donetsk",
-  // "Simferopol",
-  // "Uzhhorod",
-// "Poltava",
+  
   
   // "Zaporizhzhia",
   // "Kherson",
