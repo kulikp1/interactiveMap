@@ -231,12 +231,7 @@ const tourismData = {
   
   
   
-  
-  // "Ivano-Frankivsk",
-  // "Chernivtsi",
-  // "Ternopil",
-  // "Rivne",
-// "Khmelnytskyi",
+      
   
   // "Zhytomyr",
   // "Cherkasy",
