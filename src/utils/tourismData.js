@@ -225,16 +225,4 @@ const tourismData = {
   ],
 };
 
-
-
-
-  
-  
-  
-      
-  
-  // "Zhytomyr",
-  // "Cherkasy",
-  // "Vinnytsia",
-  // "Kyiv",
 export default tourismData;
