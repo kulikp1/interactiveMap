@@ -231,11 +231,6 @@ const tourismData = {
   
   
   
-  // "Zaporizhzhia",
-  // "Kherson",
-  // "Mykolaiv",
-  // "Kropyvnytskyi",
-// "Lutsk",
   
   // "Ivano-Frankivsk",
   // "Chernivtsi",
